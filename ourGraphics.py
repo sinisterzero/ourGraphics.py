@@ -25,6 +25,7 @@ def swindow(x,y,xe,rt):#make more window across the block
     for i in range(rt):
         window(x+(xe),(y-xe),xe)
         x += 50
+        
 def sW(x1,y1,x2,y2,r,g,b):
     sW = Rectangle(Point(x1, y1), Point(x2, y2))
     sW.setFill(color_rgb(r,g,b))
