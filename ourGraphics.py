@@ -25,6 +25,16 @@ def swindow(x,y,xe,rt):#make more window across the block
     for i in range(rt):
         window(x+(xe),(y-xe),xe)
         x += 50
+        
+def Blade(x1,y1,x2,y2,r,g,b):
+    Blade = Rectangle(Point(x1, y1), Point(x2, y2))
+    Blade.setFill(color_rgb(r,g,b))
+    Blade.draw(wind)
+    
+def sW(x1,y1,x2,y2,r,g,b):
+    sW = Rectangle(Point(x1, y1), Point(x2, y2))
+    sW.setFill(color_rgb(r,g,b))
+    sW.draw(wind)
     
 winX = 800
 wind = GraphWin("ourGraphics", winX, winX)
@@ -34,14 +44,31 @@ bg = Rectangle(Point(0,0), Point(winX, winX))
 bg.setFill(color_rgb(255,255,255))
 bg.draw(wind)
 
+rTri = Polygon(Point(325,650), Point(383, 720), Point(441, 650))
+rTri.setFill(color_rgb(255,0,0))
+rTri.draw(wind)
+ 
+
+    
+sW(283,400,483,450,0,255,0)
+sW(345,400,420,280,0,255,0)
+
+
+
+
+for i in range(8):
+    Blade(325,650-((i+1)*25),345,675-((i+1)*25),255,0,0)
+    Blade(420,650-((i+1)*25),440,675-((i+1)*25),255,0,0)
+
 x = 100
 y = 0
 xe = 150
 windt = 7
 #create the tower
-for i in range(4):
+for j in range(4):
     story(x,y,xe,windt)
-    y += 300-(50*i+1)
+    y += 300-(50*j+1)
     xe -= 25
     x += 50
     windt -= 1
+
